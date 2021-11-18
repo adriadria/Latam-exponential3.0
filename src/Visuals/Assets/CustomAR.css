@@ -1,0 +1,10 @@
+
+/* FiltersBtns Start//////////////////////////////// */
+
+.btnFiltersBtns:disabled{
+    width: 100%;
+    border: none;
+    font-size: 1.5rem;
+    opacity: 0.3;
+}
+/* FiltersBtns  End//////////////////////////////// */
