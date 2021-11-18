@@ -74,7 +74,8 @@ function UserDashboard({userData, userId, token}) {
                                         Gestiona tus turnos 
                                         
                                     </button>
-                                </Link>
+                                    </Link>
+                                    </>
                                 }
 
                                 <Link to={`/profesionales/${userData.username}`} >
