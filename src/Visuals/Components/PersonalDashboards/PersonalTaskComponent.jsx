@@ -38,8 +38,8 @@ function PersonalTaskComponent({isProfessional, personalName}) {
     const appoimentSort= appointments.sort((a,b)=>Number(a.day)-Number(b.day))
 
     const hoy = new Date()
-    const fecha = hoy.getDate() + '-' + ( hoy.getMonth() + 1 ) + '-' + hoy.getFullYear();
-    const date=fecha.split('-').reverse().join('')
+    // const fecha = hoy.getDate() + '-' + ( hoy.getMonth() + 1 ) + '-' + hoy.getFullYear();
+    // const date=fecha.split('-').reverse().join('')
 
     const hora = hoy.getHours();
     const minutos = hoy.getMinutes();

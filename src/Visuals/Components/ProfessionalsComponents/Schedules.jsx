@@ -5,7 +5,6 @@ import { getProfSchedule } from '../../../Controllers/actions/professionalsActio
 import {Link} from 'react-router-dom';
 import { addToCart } from '../../../Controllers/actions/cartActions';
 import Swal from 'sweetalert2';
-import { useJitsi } from 'react-jutsu';
 import { setAvailability } from '../../../ApiReq/schedule';
 
 export default function Schedules({id, login, name, lastname, category, cost}) {
@@ -22,18 +21,6 @@ export default function Schedules({id, login, name, lastname, category, cost}) {
     const sched= useSelector(state=>state.professionalReducer.profSchedule)
     const carrito= useSelector(state=>state.sessionReducer.cart)
     const customerId= useSelector(state=>state.sessionReducer.status.id)
-    
-
-    // const jitsiConfig = {
-    //     roomName: `Latam Exponential-${id}`,
-    //     displayName: `${name} ${lastname}`,
-    //     password: 'latam-exp',
-    //     subject: 'fan',
-    //     parentNode: 'jitsi-container',
-    //     onMeetingEnd: () => alert('Meeting has ended'),
-    // };
-    // // eslint-disable-next-line
-    // const { error, jitsi } = useJitsi(jitsiConfig);
 
     const price = cost?cost:0.01;
 

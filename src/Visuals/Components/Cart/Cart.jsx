@@ -4,10 +4,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom';
 import CartElement from "./CartElement";
 import { removeFromCartAll } from "../../../Controllers/actions/cartActions";
-import { setAvailability } from "../../../ApiReq/schedule";
 import Swal from 'sweetalert2'
 import { postCartInfo } from "../../../ApiReq/cart";
-import { sendMailAppointment, sendMailInvoice } from '../../../ApiReq/mails'
+import { sendMailAppointment } from '../../../ApiReq/mails'
 
 const PayPalButton = window.paypal.Buttons.driver("react", { React, ReactDOM });
 
@@ -75,7 +74,7 @@ function  handlePay(){
 }
 
     
-    const elements= order.map((o,i)=><li key={i} className="mb-2" key={o._id}>
+    const elements= order.map((o,i)=><li className="mb-2" key={o._id}>
             <CartElement 
             name={o.name}
             date={o.appointment.date}
