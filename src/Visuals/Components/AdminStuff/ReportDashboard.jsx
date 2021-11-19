@@ -7,7 +7,7 @@ function ReportDashboard({token}){
   const allReports = useSelector(state=>state.adminReducer.adminReports);
   const allReasons = {Service:'Servicio', App:'Aplicación', Payment:'Pagos', Account:'Cuenta', Suggestion:'Sugerencias', Other:'Otros'};
   const [reportReason,setReportReason] = useState('Todos');
-  let color= {Service:'green',App:'red',Payment:'gray',Account:'yellow',Suggestion:'pink',Other:'blue'};
+  let color= {Service:'green',App:'red',Payment:'blue',Account:'yellow',Suggestion:'pink',Other:'gray'};
   function handleChange(ev){
     ev.preventDefault();
     setReportReason(ev.target.value);

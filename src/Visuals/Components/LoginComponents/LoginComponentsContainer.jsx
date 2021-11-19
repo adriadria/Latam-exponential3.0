@@ -191,15 +191,14 @@ function LoginComponentsContainer() {
 
     const responseGoogle =(res)=>{
         setGoogleData({...res.profileObj})
-        console.log(res);
         const endUN = res.profileObj.email?.indexOf('@')
-        if(!userNames.includes(res.profileObj.email?.slice(0, endUN))){
+        if(!userNames.includes(res.profileObj.email.slice(0, endUN))){
             setRegister(!register)
         }
-        if(userNames.includes(res.profileObj.email?.slice(0, endUN))){
+        if(userNames.includes(res.profileObj.email.slice(0, endUN))){
             setGoogleData({})
             setShowErrorText(false)
-            dispatch(checkLoginAction({username:res.profileObj.email?.slice(0, endUN), password:res.profileObj.googleId}))
+            dispatch(checkLoginAction({username:res.profileObj.email.slice(0, endUN), password:res.profileObj.googleId}))
         }
     }
 
@@ -273,7 +272,7 @@ function LoginComponentsContainer() {
                     justify-center rounded-lg shadow-lg	`
 
     return (
-        <div className='flex flex-col items-center justify-start mt-10 h-screen'>
+        <div className='flex flex-col items-center justify-start my-10 min-h-screen sm:w-96 md:mx-auto '>
             <PopContainer   trigger={register}
                             principalDiv={modalDiv}
                             children={<LoginCreateAccount 
