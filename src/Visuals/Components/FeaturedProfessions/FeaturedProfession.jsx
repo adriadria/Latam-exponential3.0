@@ -4,6 +4,8 @@ import * as FaIcons from 'react-icons/fa';
 import ImageComponent from "../ImageComponent";
 import { filterProfessional } from '../../../Controllers/actions/professionalsActions';
 import { useHistory } from 'react-router-dom';
+import {updateCategCount} from "../../../ApiReq/constantInfo";
+
 
 function FeaturedProfession({profession}){
   let history = useHistory();
@@ -25,13 +27,14 @@ const dispatch = useDispatch();
 const professionals = useSelector(state => state.professionalReducer.professionals);
 
 const filterByCategory = (e) => {
+  updateCategCount({name:e});
   dispatch(filterProfessional({profesion: e},professionals));
   history.push('./profesionales')
 }
   
 return (
   <div className="col-1-4@xl col-1-4@lg col-1-2@md col-1-2@sm col-1-1@xs padd-lg">
-    <div className="border-color-dark-a20 border-radius-sm overflow-hidden shadow-lg"
+    <div className="border-color-dark-a20 border-radius-sm overflow-hidden shadow-lg cursor-pointer"
     onClick={() => filterByCategory(profession.name)}
     >
       <ImageComponent key={profession._id} img={profession.img} ratio={"ratio-3-2"}/>

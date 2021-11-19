@@ -5,7 +5,8 @@ import { getProfSchedule } from '../../../Controllers/actions/professionalsActio
 import {Link} from 'react-router-dom';
 import { addToCart } from '../../../Controllers/actions/cartActions';
 import Swal from 'sweetalert2';
-import { setAvailability } from '../../../ApiReq/schedule';
+
+
 
 export default function Schedules({id, login, name, lastname, category, cost}) {
     
@@ -21,7 +22,7 @@ export default function Schedules({id, login, name, lastname, category, cost}) {
     const sched= useSelector(state=>state.professionalReducer.profSchedule)
     const carrito= useSelector(state=>state.sessionReducer.cart)
     const customerId= useSelector(state=>state.sessionReducer.status.id)
-
+    
     const price = cost?cost:0.01;
 
     function handleClick(e) {
@@ -38,7 +39,6 @@ export default function Schedules({id, login, name, lastname, category, cost}) {
             professionalId:id,
             customerId:customerId
         }))
-        setAvailability(e.target.id,false,token);
         return Swal.fire({
             title: '¡Reserva hecha!',
             text: 'En tu carrito podrás abonar tu reserva',
@@ -48,7 +48,6 @@ export default function Schedules({id, login, name, lastname, category, cost}) {
         })
     };
     const dateJoin= (date)=>{
-        console.log(date.dayName+", "+date.dayNumber+" de "+date.month+" "+date.year+" "+date.time+" hs")
         return date.dayName+", "+date.dayNumber+" de "+date.month+" "+date.year+" "+date.time+" hs"
     }
 
@@ -117,7 +116,7 @@ export default function Schedules({id, login, name, lastname, category, cost}) {
                             {dateJoin(elem.date)}  { carrito.find(e=>e.id===elem._id) ||  load.find(e=>e===elem._id)? 
                                 <p className="w-full py-2 text-center">En carrito</p> 
                                         : 
-                                <button disabled={id===customerId} id={elem._id} name={dateJoin(elem.date)} onClick={handleClick} className="padd-sm mt-1 border-radius-sm font-sm action action-add-post w-full">Contratar</button>
+                                <button disabled={id===customerId} id={elem._id} name={dateJoin(elem.date)} onClick={handleClick} className={id===customerId?'hidden':"padd-sm mt-1 border-radius-sm font-sm action action-add-post w-full"}>Contratar</button>
                             
                             }
                         </div>
@@ -136,7 +135,6 @@ export default function Schedules({id, login, name, lastname, category, cost}) {
         : <p className="py-4">Sin turnos disponibles</p>
         }
         </ul>
-        {/* <div className='hidden' id={jitsiConfig.parentNode} /> */}
     </div>
     )
 };

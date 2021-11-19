@@ -44,8 +44,8 @@ function Nosotros() {
 
 
     return (
-        <div className='flex flex-col nbg w-full'>
-                <div className='flex my-10 justify-around flex-wrap'>
+        <div className='flex flex-col nbg w-full '>
+                <div className='flex my-10 justify-around flex-wrap '>
                 <TeamCard
                         img='https://avatars.githubusercontent.com/u/69180670?v=4'
                         title={<p className='font-main'>Sabrina Noel Vettorelo</p>}
@@ -55,8 +55,8 @@ function Nosotros() {
                     />
                 <TeamCard
                         img='https://avatars.githubusercontent.com/u/83995401?v=4'
-                        title={<p className='font-main'>Adriana Marta Cejas</p>}
-                        text='Web Developer'
+                        title={<p className='font-main'>Marta Adriana Cejas</p>}
+                        text='FullStack Dev { PERN && MERN}'
                         name='adriana'
                         onClick={handleRedirects}
                     />
@@ -74,8 +74,6 @@ function Nosotros() {
                         name='juanpablo'
                         onClick={handleRedirects}
                     />
-            </div>
-            <div className='flex my-10 justify-around flex-wrap'>
                 <TeamCard
                         img='https://avatars.githubusercontent.com/u/32313172?v=4'
                         title={<p className='font-main'>Antonio Rodríguez</p>}
@@ -100,7 +98,7 @@ function Nosotros() {
                 <TeamCard
                         img='https://avatars.githubusercontent.com/u/49795628?v=4'
                         title={<p className='font-main'>Gaston Scocco</p>}
-                        text='Full Stack Web Developer || JavaScript || React - Redux || NodeJS - Express - PostgresSQL 💻'
+                        text='( Full Stack Developer PERN )=>{ JavaScript || React - Redux || NodeJS - Express - PostgresSQL }💻'
                         name='gaston'
                         onClick={handleRedirects}
                     />
