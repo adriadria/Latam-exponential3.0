@@ -107,7 +107,7 @@ function CategoryDashboard({token}){
           </select>
         </div>
         <div className="col-1-5@xl col-1-4@lg padd-md">
-          <p>&nbsp;</p>
+          <p className='element-sm-xs'>&nbsp;</p>
           <button
           className="width-100 padd-md border-radius-sm font-sm action action-add-post normalize"
           onClick={(e) => dispatch(adminSetCategCount(token))}>Resetear contador de búsquedas</button>

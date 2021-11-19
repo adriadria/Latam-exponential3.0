@@ -397,3 +397,18 @@
     border-top-left-radius: 2vh;
     border-top-right-radius: 2vh;
 }
+
+@media (max-width:960px){
+    .little-box{
+        margin-top: 1rem;
+        width: 100%;
+    }
+    .full-info-down{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        min-height: 10rem;
+        max-height: none;
+        position: inherit;
+    }
+}
